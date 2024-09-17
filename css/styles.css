@@ -133,6 +133,8 @@ button {
 /* #region header */
 .site-header {
   border-bottom: 1px solid var(--accent);
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
   background: var(--white-bg);
 }
 .header-container {
@@ -153,18 +155,29 @@ button {
   gap: 40px;
 }
 .header-nav__link {
-  display: block;
+  position: relative;
   padding: 24px 0;
   font-weight: 500;
   color: var(--dark);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-nav__link:hover,
 .header-nav__link:focus {
   color: var(--pressed-state);
 }
-.header-nav__link:active {
+.header-nav__link.active {
   color: var(--pressed-state);
-  text-decoration: underline;
+}
+.header-nav__link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background: var(--pressed-state);
+  border-radius: 2px;
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-info {
   font-style: normal;
@@ -178,6 +191,7 @@ button {
   display: block;
   padding: 24px 0;
   color: var(--text);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-info__link:hover,
 .contact-info__link:focus {
@@ -187,8 +201,17 @@ button {
 
 /* #region hero */
 .hero {
+  border: 1px solid #000;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 600px;
   background-color: var(--dark);
   padding: 188px 0;
+  background-image: linear-gradient(var(--hero-bg), var(--hero-bg)),
+    url(../images/hero/img-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .hero__title {
   max-width: 496px;
@@ -215,6 +238,7 @@ button {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   color: var(--white-bg);
   background-color: var(--primary-brand);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero__btn:hover,
 .hero__btn:focus {
