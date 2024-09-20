@@ -365,6 +365,11 @@ button {
   background-color: var(--dark);
   padding: 100px 0;
 }
+.site-footer .container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
 .footer-site-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -373,4 +378,26 @@ button {
   width: 264px;
   color: var(--light);
 }
+.logo-text {
+  margin-right: 120px;
+  display: flex;
+  flex-direction: column;
+}
+.social-text {
+  color: var(--white-bg);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.social-list {
+  gap: 16px;
+  padding: 0;
+}
+.site-footer .social-link {
+  margin: 0;
+}
+.site-footer .social-link:hover,
+.site-footer .social-link:focus {
+  background-color: var(--success);
+}
+
 /* #endregion footer */
